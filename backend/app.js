@@ -25,8 +25,8 @@ async function sendMail(mail_id, message, subject) {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: "bidmafia007@gmail.com", // generated ethereal user
-            pass: "msodqaowigryvpvb", // generated ethereal password
+            user: "#@gmail.com", // generated ethereal user
+            pass: "#", // generated ethereal password
         },
     });
 

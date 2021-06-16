@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <div class="brand-wrapper">
+      <img src="assets/images/flame-1208.png" alt="logo" class="logo">
+    </div>
+    <a class="navbar-brand">BestResource.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul id="loggedInNav" class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Home</a>
+          </li>
+          <li class="nav-item left">
+            <a class="nav-link" style="cursor:pointer" routerLink="search">Search</a>
+          </li>
+          <li class="nav-item left">
+            <a class="nav-link" style="cursor:pointer" routerLink="users/profile">Profile</a>
+          </li>
+          <li class="nav-item left">
+            <a class="nav-link" style="cursor:pointer" routerLink="resource/create">Create-Resource</a>
+          </li>
+          <li class="nav-item left admin">
+            <a class="nav-link" style="cursor:pointer" routerLink="resource/reported">Reported-Resources</a>
+          </li>
+          <li class="nav-item left admin">
+            <a class="nav-link" style="cursor:pointer" routerLink="resource/blocked">Blocked-Resources</a>
+          </li>
+          <li class="nav-item left admin">
+            <a class="nav-link" style="cursor:pointer" routerLink="users/blocked">Blocked-Users</a>
+          </li>
+          <li class="nav-item left">
+            <a class="nav-link" style="cursor:pointer" (click)="logout()">Logout</a>
+          </li>
+
+        </ul>
+      <ul class="navbar-nav ml-auto" id="loggedOutNav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/users/register">Register</a>
+        </li>
+      </ul>
+      </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- footer -->
+<footer class="page-footer pt-4 bg-dark text-center">
+  <p class="navbar-brand mt-5 mb-3 text-muted">BestResource.com</p>
+  <p class="text-muted">vyompatel95745@gmail.com</p>
+  <p class="text-muted">&copy; 2020-2021</p>
+  <nav class="login-card-footer-nav">
+    <a href="#!">Terms of use.</a>
+    <a href="#!">Privacy policy</a>
+  </nav>
+</footer>

@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-header">
+    {{resource.topic}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Link : <a href={{resource.link}} target="_blank">{{resource.link}}</a></h5>
+    <p class="card-text">{{resource.description}}</p>
+    <a href={{resource.link}} target="_blank" class="btn btn-primary">Open link in new tab</a>
+    <a (click)="ClearAllReports()" target="_blank" class="btn btn-success" style="margin-left: 15px;">Clear All reports for this resource</a>
+    <a  (click)="BlockResource()" class="btn btn-danger" style="margin-left: 15px;">Block Resource</a>
+    <a  (click)="BlockUser()" class="btn btn-danger" style="margin-left: 15px;">Block User</a>
+    <hr>
+  </div>
+
+  <div class="card-header">
+    User who reported the resource
+  </div>
+  <div class="card-body">
+    <p class="card-text">Name : {{reporter.name}}</p>
+    <p class="card-text">Email : {{reporter.email}}</p>
+    <hr>
+  </div>
+
+  <div class="card-header">
+    User who Added the resource
+  </div>
+  <div class="card-body">
+    <p class="card-text">Name : {{res_owner.name}}</p>
+    <p class="card-text">Email : {{res_owner.email}}</p>
+    <hr>
+  </div>
+
+  <div class="card-header">
+    Comments
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0" *ngFor="let c of comments">
+      <hr>
+      <p>{{c.comment}}</p>
+      <footer class="blockquote-footer">{{getUserEmail(c.user_id)}}</footer>
+    </blockquote>
+  </div>
+</div>
+
+<div class="card-header">
+  <h4>Other Resources By the Same user</h4>
+</div>
+<hr/>
+
+<div class="card"  *ngFor="let res of other_resources">
+  <div class="card-header">
+    {{res.topic}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Link : <a href={{res.link}} target="_blank">{{res.link}}</a></h5>
+    <h5 class="card-title">Status : {{res.status}}</h5>
+    <p class="card-text">{{res.description}}</p>
+    <a href={{res.link}} target="_blank" class="btn btn-primary">Open link in new tab</a>
+  </div>
+</div>

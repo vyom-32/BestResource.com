@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    {{resource.topic}}
+    <input class="btn btn-danger" (click)="deleteResource()" type="button" value="Delete Resource" style="float: right;">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Link : <a href={{resource.link}} target="_blank">{{resource.link}}</a></h5>
+    <textarea [(ngModel)]="description" type="text" class="form-control" name="description" required placeholder="description"></textarea>
+    <br/>
+    <a class="btn btn-success" (click)="updateDescription()">Update Description</a>
+    <br/><br/>
+    <a href={{resource.link}} target="_blank" class="btn btn-primary">Open link in new tab</a>
+  </div>
+  <div class="card-header" id="rate_div">
+    <div>
+      How would you rate this resource from 1 to 10?
+      <div class="input-group mb-3">
+        <input type="number" name="new_ratting" min=1 max=10 [(ngModel)]="new_ratting.ratting" class="form-control"
+          placeholder="rate" required aria-label="rate" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="rate()">Rate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-header" id="ratting_div">
+    Ratting : {{ratting_index}}/10
+  </div>
+  <div class="card-header">
+    Comments
+  </div>
+  <div class="card-body">
+    <div class="input-group mb-3">
+      <input type="text" name="new_comment" [(ngModel)]="new_comment.comment" class="form-control"
+        placeholder="Write comment" aria-label="Write comment" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="addComment()">Comment</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0" *ngFor="let c of comments">
+      <hr>
+      <p>{{c.comment}}</p>
+      <footer class="blockquote-footer">{{getUserEmail(c.user_id)}} | <a *ngIf="ownComment(c)"
+          (click)="deleteComment(c._id)">remove</a></footer>
+
+    </blockquote>
+  </div>
+</div>

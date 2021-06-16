@@ -1,0 +1,15 @@
+.card{
+  margin: 50px 50px 50px;
+  border-color: rgb(80, 80, 80);
+  border-width: 2px;
+  box-shadow:10px 10px 10px;
+  padding: 0px;
+}
+
+.copy-link{
+  border-width: 1px;
+  border-color: rgb(10, 0, 0);
+  box-shadow: black;
+  font-size: medium;
+  color: black;
+}

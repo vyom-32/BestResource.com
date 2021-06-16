@@ -1,0 +1,23 @@
+<div id="resources" class="login-card">
+  <div class="py-5" *ngFor="let r of reports">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h4 class="mb-0">Resource id : {{r.resource_id}}</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Reason : {{r.reason}}</label>
+            </div>
+            <div class="form-group">
+              <label>User id : {{r.user_id}}</label>
+            </div>
+            <hr>
+            <button type="button" class="btn btn-block login-btn mb-4" (click)="viewResource(r._id)" routerLinkActive="router-link-active" >View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>

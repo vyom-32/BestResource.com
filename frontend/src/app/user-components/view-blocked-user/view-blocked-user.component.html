@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    {{user.name}}
+  </div>
+  <div class="card-body">
+    <p class="card-text">Email : {{user.email}}</p>
+    <a  (click)="unblockUser()" class="btn btn-success btn-lg btn-block">Unblock User</a>
+    <hr>
+  </div>
+
+<div class="card-header">
+  <h4>Resources added by {{user.name}}</h4>
+</div>
+<hr/>
+
+<div class="card"  *ngFor="let res of resources">
+  <div class="card-header">
+    {{res.topic}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Link : <a href={{res.link}} target="_blank">{{res.link}}</a></h5>
+    <h5 class="card-title">Status : {{res.status}}</h5>
+    <p class="card-text">{{res.description}}</p>
+    <a href={{res.link}} target="_blank" class="btn btn-primary">Open link in new tab</a>
+  </div>
+</div>

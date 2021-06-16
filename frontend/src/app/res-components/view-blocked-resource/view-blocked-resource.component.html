@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    {{resource.topic}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Link : <a href={{resource.link}} target="_blank">{{resource.link}}</a></h5>
+    <h5 class="card-title">Status : {{resource.status}}</h5>
+    <p class="card-text">Description : {{resource.description}}</p>
+    <a href={{resource.link}} target="_blank" class="btn btn-primary">Open link in new tab</a>
+    <a class="btn btn-success" (click)="unblockResource()" style="margin-left: 15px;">Unblock Resource</a>
+  </div>
+</div>
